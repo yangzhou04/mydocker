@@ -2,10 +2,12 @@ FROM node
 
 WORKDIR /app/node-app
 
-COPY . /app/node-app/
+COPY package.json /app/node-app/
 
 RUN npm install
 
-EXPOSE 80
+COPY . /app/node-app/
+
+EXPOSE 3000
 
 CMD [ "node", "server.js" ]
